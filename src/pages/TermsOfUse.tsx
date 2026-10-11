@@ -7,9 +7,9 @@ const TermsOfUse = () => {
 
   if (language === "el") {
     return (
-      <LegalPageLayout title="Όροι Χρήσης" lastUpdated="4 Αυγούστου 2026">
+      <LegalPageLayout title="Όροι Χρήσης" lastUpdated="12 Οκτώβρη 2026">
         <p>
-          Καλώς ήρθατε στον ιστότοπο της Fino Ice Cream (<a href="https://finoicecream.gr">finoicecream.gr</a>).
+          Καλώς ήρθατε στον ιστότοπο της ΑΛΦΑ ΓΑΜΑ ΠΑΓΩΤΟ Ε.Ε. (<a href="https://finoicecream.gr">finoicecream.gr</a>).
           Με την πρόσβαση και χρήση του ιστότοπου, αποδέχεστε τους παρόντες Όρους Χρήσης. Εάν δεν
           συμφωνείτε, παρακαλούμε μην χρησιμοποιείτε τον ιστότοπο.
         </p>
@@ -17,13 +17,13 @@ const TermsOfUse = () => {
         <h2>1. Σκοπός του Ιστότοπου</h2>
         <p>
           Ο ιστότοπος παρέχει πληροφορίες για τα προϊόντα, την ιστορία, την ποιότητα και τα στοιχεία
-          επικοινωνίας της Fino Ice Cream. Δεν λειτουργεί ως ηλεκτρονικό κατάστημα.
+          επικοινωνίας της ΑΛΦΑ ΓΑΜΑ ΠΑΓΩΤΟ Ε.Ε. Δεν λειτουργεί ως ηλεκτρονικό κατάστημα.
         </p>
 
         <h2>2. Πνευματική Ιδιοκτησία</h2>
         <p>
           Όλο το περιεχόμενο (κείμενα, φωτογραφίες, λογότυπα, βίντεο, σχέδια) προστατεύεται από
-          πνευματικά δικαιώματα και ανήκει στην Fino Ice Cream ή στους νόμιμους δικαιούχους. Απαγορεύεται
+          πνευματικά δικαιώματα και ανήκει στην ΑΛΦΑ ΓΑΜΑ ΠΑΓΩΤΟ Ε.Ε. ή στους νόμιμους δικαιούχους. Απαγορεύεται
           η αναπαραγωγή, διανομή ή τροποποίηση χωρίς προηγούμενη γραπτή άδεια.
         </p>
 
@@ -57,7 +57,7 @@ const TermsOfUse = () => {
 
         <h2>7. Περιορισμός Ευθύνης</h2>
         <p>
-          Στο μέγιστο βαθμό που επιτρέπεται από τον νόμο, η Fino Ice Cream δεν ευθύνεται για άμεσες ή
+          Στο μέγιστο βαθμό που επιτρέπεται από τον νόμο, η ΑΛΦΑ ΓΑΜΑ ΠΑΓΩΤΟ Ε.Ε. δεν ευθύνεται για άμεσες ή
           έμμεσες ζημίες που προκύπτουν από τη χρήση ή την αδυναμία χρήσης του ιστότοπου.
         </p>
 
@@ -86,21 +86,21 @@ const TermsOfUse = () => {
   return (
     <LegalPageLayout title="Terms of Use" lastUpdated="August 4, 2026">
       <p>
-        Welcome to the Fino Ice Cream website (<a href="https://finoicecream.gr">finoicecream.gr</a>).
+        Welcome to the ΑΛΦΑ ΓΑΜΑ ΠΑΓΩΤΟ Ε.Ε. website (<a href="https://finoicecream.gr">finoicecream.gr</a>).
         By accessing and using this website, you agree to these Terms of Use. If you do not agree, please
         do not use the website.
       </p>
 
       <h2>1. Purpose of the Website</h2>
       <p>
-        This website provides information about Fino Ice Cream products, history, quality, and contact
+        This website provides information about ΑΛΦΑ ΓΑΜΑ ΠΑΓΩΤΟ Ε.Ε. products, history, quality, and contact
         details. It does not operate as an online store.
       </p>
 
       <h2>2. Intellectual Property</h2>
       <p>
-        All content (text, photos, logos, videos, designs) is protected by copyright and belongs to Fino
-        Ice Cream or its lawful owners. Reproduction, distribution, or modification without prior written
+        All content (text, photos, logos, videos, designs) is protected by copyright and belongs to ΑΛΦΑ
+        ΓΑΜΑ ΠΑΓΩΤΟ Ε.Ε. or its lawful owners. Reproduction, distribution, or modification without prior written
         permission is prohibited.
       </p>
 
@@ -134,7 +134,7 @@ const TermsOfUse = () => {
 
       <h2>7. Limitation of Liability</h2>
       <p>
-        To the maximum extent permitted by law, Fino Ice Cream is not liable for direct or indirect
+        To the maximum extent permitted by law, ΑΛΦΑ ΓΑΜΑ ΠΑΓΩΤΟ Ε.Ε. is not liable for direct or indirect
         damages arising from use or inability to use the website.
       </p>
 

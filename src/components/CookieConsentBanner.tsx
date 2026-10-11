@@ -38,23 +38,23 @@ const CookieConsentBanner = () => {
       role="dialog"
       aria-labelledby="cookie-banner-title"
       aria-describedby="cookie-banner-description"
-      className="fixed inset-x-0 bottom-0 z-[100] border-t border-stone-300 bg-[hsl(40,35%,96%)]/95 p-4 shadow-2xl backdrop-blur-md sm:p-6"
+      className="fixed inset-x-0 bottom-0 z-[100] border-t border-border bg-card/95 p-4 shadow-2xl backdrop-blur-md sm:p-6"
       style={{ paddingBottom: "max(1rem, env(safe-area-inset-bottom, 0px))" }}
     >
       <div className="container-wide mx-auto flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
         <div className="flex max-w-3xl gap-3">
           <Cookie className="mt-1 hidden h-6 w-6 shrink-0 text-primary sm:block" aria-hidden />
           <div>
-            <h2 id="cookie-banner-title" className="font-display text-lg text-stone-900">
+            <h2 id="cookie-banner-title" className="font-display text-lg text-foreground">
               {t.title}
             </h2>
-            <p id="cookie-banner-description" className="mt-2 font-body text-sm leading-relaxed text-stone-700">
+            <p id="cookie-banner-description" className="mt-2 font-body text-sm leading-relaxed text-muted-foreground">
               {t.description}{" "}
-              <Link to="/privacy" className="underline underline-offset-2 hover:text-stone-900">
+              <Link to="/privacy" className="underline underline-offset-2 text-foreground hover:text-primary">
                 {t.privacy}
               </Link>{" "}
               ·{" "}
-              <Link to="/cookies" className="underline underline-offset-2 hover:text-stone-900">
+              <Link to="/cookies" className="underline underline-offset-2 text-foreground hover:text-primary">
                 {t.cookies}
               </Link>
             </p>
@@ -66,7 +66,7 @@ const CookieConsentBanner = () => {
             type="button"
             variant="outline"
             onClick={openPreferences}
-            className="min-h-[44px] rounded-full border-stone-400 bg-transparent font-body text-sm text-stone-900 hover:bg-stone-100"
+            className="min-h-[44px] rounded-full border-border bg-transparent font-body text-sm text-foreground hover:bg-muted"
           >
             {t.customize}
           </Button>
@@ -74,7 +74,7 @@ const CookieConsentBanner = () => {
             type="button"
             variant="outline"
             onClick={rejectNonEssential}
-            className="min-h-[44px] rounded-full border-stone-400 bg-transparent font-body text-sm text-stone-900 hover:bg-stone-100"
+            className="min-h-[44px] rounded-full border-border bg-transparent font-body text-sm text-foreground hover:bg-muted"
           >
             {t.reject}
           </Button>

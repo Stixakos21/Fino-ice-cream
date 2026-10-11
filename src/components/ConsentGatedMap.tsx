@@ -2,9 +2,9 @@ import { MapPin } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useCookieConsent } from "@/contexts/CookieConsentContext";
 
-const mapsUrl = "https://maps.app.goo.gl/J51MYaGNNenX3XzP7?g_st=iv";
-const embeddedMapUrl =
-  "https://maps.google.com/maps?q=Fino%20IceCream%2C%20M4%20Street%2C%20Heraklion%20Industrial%20Area%2C%20Greece&z=15&output=embed";
+const mapsQuery = "35.3188564,25.1684478";
+const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(mapsQuery)}`;
+const embeddedMapUrl = `https://www.google.com/maps?q=${encodeURIComponent(mapsQuery)}&z=18&output=embed`;
 
 interface ConsentGatedMapProps {
   title: string;

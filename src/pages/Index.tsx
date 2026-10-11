@@ -113,17 +113,17 @@ const Index = () => {
         </div>
       </section>
 
-      <section className="bg-[#FAF9F6] px-4 pb-10 pt-16 sm:px-6 md:pb-12 md:pt-24">
+      <section className="bg-[hsl(var(--background))] px-4 pb-10 pt-16 sm:px-6 md:pb-12 md:pt-24">
         <div className="reveal mx-auto max-w-4xl text-center opacity-0">
-          <h2 className="font-serif text-[clamp(1.75rem,5.5vw,3.75rem)] leading-tight text-stone-900 md:text-5xl lg:text-6xl">
-            {t.introTitleStart} <span className="text-blue-500">{t.introTitleAccent}</span>
+          <h2 className="font-serif text-[clamp(1.75rem,5.5vw,3.75rem)] leading-tight text-foreground md:text-5xl lg:text-6xl">
+            {t.introTitleStart} <span className="text-primary">{t.introTitleAccent}</span>
           </h2>
-          <p className="mt-7 font-body text-base text-gray-600 md:text-lg">{t.introText1}</p>
-          <p className="mt-4 font-body text-sm text-gray-600/90 md:text-base">{t.introText2}</p>
+          <p className="mt-7 font-body text-base text-muted-foreground md:text-lg">{t.introText1}</p>
+          <p className="mt-4 font-body text-sm text-muted-foreground md:text-base">{t.introText2}</p>
         </div>
       </section>
 
-      <section className="bg-cream pb-16 pt-6 md:pb-20 md:pt-8">
+      <section className="bg-[hsl(var(--card))] pb-16 pt-6 md:pb-20 md:pt-8">
         <div className="container-wide mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-6">
             {t.quickLinks.map((card) => (

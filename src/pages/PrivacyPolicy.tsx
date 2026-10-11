@@ -7,9 +7,9 @@ const PrivacyPolicy = () => {
 
   if (language === "el") {
     return (
-      <LegalPageLayout title="Πολιτική Απορρήτου" lastUpdated="4 Αυγούστου 2026">
+      <LegalPageLayout title="Πολιτική Απορρήτου" lastUpdated="12 Οκτώβρη 2026">
         <p>
-          Η παρούσα Πολιτική Απορρήτου εξηγεί πώς η <strong>Fino Ice Cream</strong> («εμείς», «η Εταιρεία»)
+          Η παρούσα Πολιτική Απορρήτου εξηγεί πώς η <strong>ΑΛΦΑ ΓΑΜΑ ΠΑΓΩΤΟ Ε.Ε.</strong> («εμείς», «η Εταιρεία»)
           συλλέγει, χρησιμοποιεί και προστατεύει τα προσωπικά σας δεδομένα όταν επισκέπτεστε τον ιστότοπο{" "}
           <a href="https://finoicecream.gr">finoicecream.gr</a> («ο Ιστότοπος»), σύμφωνα με τον Γενικό
           Κανονισμό Προστασίας Δεδομένων (ΕΕ) 2016/679 (GDPR) και την ελληνική νομοθεσία.
@@ -17,7 +17,7 @@ const PrivacyPolicy = () => {
 
         <h2>1. Υπεύθυνος Επεξεργασίας</h2>
         <ul>
-          <li><strong>Επωνυμία:</strong> Fino Ice Cream</li>
+          <li><strong>Επωνυμία:</strong> ΑΛΦΑ ΓΑΜΑ ΠΑΓΩΤΟ Ε.Ε.</li>
           <li><strong>Διεύθυνση:</strong> Οδός M4 - ΒΙ.ΠΕ. Ηρακλείου, Ελλάδα</li>
           <li><strong>Email:</strong> <a href="mailto:pagotofino@gmail.com">pagotofino@gmail.com</a></li>
           <li><strong>Τηλέφωνο:</strong> <a href="tel:2810380812">281 0380812</a></li>
@@ -110,7 +110,7 @@ const PrivacyPolicy = () => {
   return (
     <LegalPageLayout title="Privacy Policy" lastUpdated="August 4, 2026">
       <p>
-        This Privacy Policy explains how <strong>Fino Ice Cream</strong> («we», «the Company») collects,
+        This Privacy Policy explains how <strong>ΑΛΦΑ ΓΑΜΑ ΠΑΓΩΤΟ Ε.Ε.</strong> («we», «the Company») collects,
         uses, and protects your personal data when you visit{" "}
         <a href="https://finoicecream.gr">finoicecream.gr</a> («the Website»), in accordance with the
         EU General Data Protection Regulation (GDPR) and applicable Greek law.
@@ -118,7 +118,7 @@ const PrivacyPolicy = () => {
 
       <h2>1. Data Controller</h2>
       <ul>
-        <li><strong>Company:</strong> Fino Ice Cream</li>
+        <li><strong>Company:</strong> ΑΛΦΑ ΓΑΜΑ ΠΑΓΩΤΟ Ε.Ε.</li>
         <li><strong>Address:</strong> Street M4 - Heraklion Industrial Area, Greece</li>
         <li><strong>Email:</strong> <a href="mailto:pagotofino@gmail.com">pagotofino@gmail.com</a></li>
         <li><strong>Phone:</strong> <a href="tel:2810380812">281 0380812</a></li>

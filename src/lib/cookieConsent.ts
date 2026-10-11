@@ -66,6 +66,7 @@ export const clearNonEssentialStorage = () => {
   if (typeof window === "undefined") return;
 
   window.localStorage.removeItem("fino-site-language");
+  window.localStorage.removeItem("fino-theme");
 };
 
 export const hasConsentChoice = (): boolean => readStoredConsent() !== null;

@@ -51,6 +51,70 @@
     --sidebar-border: 30 20% 88%;
     --sidebar-ring: 205 55% 45%;
   }
+
+  .dark {
+    --background: 220 30% 10%;
+    --foreground: 210 30% 96%;
+
+    --card: 220 26% 13%;
+    --card-foreground: 210 30% 96%;
+
+    --popover: 220 26% 13%;
+    --popover-foreground: 210 30% 96%;
+
+    --primary: 206 78% 62%;
+    --primary-foreground: 220 30% 10%;
+
+    --secondary: 220 20% 18%;
+    --secondary-foreground: 210 30% 96%;
+
+    --muted: 220 18% 18%;
+    --muted-foreground: 214 18% 78%;
+
+    --accent: 198 38% 30%;
+    --accent-foreground: 210 30% 96%;
+
+    --destructive: 0 70% 58%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 18% 22%;
+    --input: 220 18% 22%;
+    --ring: 206 78% 62%;
+
+    --cream: 220 18% 16%;
+    --ice-blue: 206 42% 22%;
+    --ice-pink: 330 25% 22%;
+    --ice-mint: 170 18% 20%;
+    --ice-lavender: 260 18% 22%;
+
+    --sidebar-background: 220 30% 10%;
+    --sidebar-foreground: 210 30% 96%;
+    --sidebar-primary: 210 30% 96%;
+    --sidebar-primary-foreground: 220 30% 10%;
+    --sidebar-accent: 220 20% 18%;
+    --sidebar-accent-foreground: 210 30% 96%;
+    --sidebar-border: 220 18% 22%;
+    --sidebar-ring: 206 78% 62%;
+  }
+
+  .dark body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+  }
+
+  .dark .bg-cream,
+  .dark .bg-\[hsl\(var\(--card\)\)\],
+  .dark .bg-\[hsl\(40\,35\%\,96\%\)\],
+  .dark .bg-\[\#FAF9F6\] {
+    background-color: hsl(var(--card));
+  }
+
+  .dark .text-stone-900,
+  .dark .text-stone-700,
+  .dark .text-gray-600,
+  .dark .text-gray-600\/90 {
+    color: hsl(var(--foreground));
+  }
 }
 
 @layer base {
@@ -126,6 +190,59 @@
 
   .divider-line {
     @apply w-16 h-0.5 bg-primary mx-auto my-8;
+  }
+
+  .legal-content {
+    @apply prose-p:leading-8 prose-p:text-foreground/80 prose-headings:scroll-mt-28 prose-h2:mt-12 prose-h2:border-b prose-h2:border-border/80 prose-h2:pb-3 prose-h2:text-2xl sm:prose-h2:text-3xl prose-h3:mt-8 prose-h3:text-lg sm:prose-h3:text-xl prose-ul:my-5 prose-li:my-2 prose-table:my-6 prose-th:bg-primary/10 prose-th:font-body prose-th:font-semibold prose-td:align-top;
+  }
+
+  .dark .legal-content {
+    color: hsl(var(--foreground));
+  }
+
+  .dark .legal-content p,
+  .dark .legal-content li,
+  .dark .legal-content strong,
+  .dark .legal-content h2,
+  .dark .legal-content h3,
+  .dark .legal-content th,
+  .dark .legal-content td,
+  .dark .legal-content a {
+    color: hsl(var(--foreground));
+  }
+
+  .dark .legal-content a {
+    color: hsl(var(--primary));
+  }
+
+  .dark .legal-content table,
+  .dark .legal-content thead,
+  .dark .legal-content tbody,
+  .dark .legal-content tr,
+  .dark .legal-content th,
+  .dark .legal-content td {
+    color: hsl(var(--foreground));
+    background-color: transparent;
+    border-color: hsl(var(--border));
+  }
+
+  .dark .legal-content table {
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .dark .legal-content th,
+  .dark .legal-content td {
+    padding: 0.75rem 0.875rem;
+    text-align: left;
+    vertical-align: top;
+    border-bottom: 1px solid hsl(var(--border));
+  }
+
+  .dark .legal-content thead th {
+    background: hsl(var(--muted));
+    color: hsl(var(--foreground));
   }
 }
 

@@ -314,21 +314,21 @@ const Products = () => {
             {displayedFlavors.map(({ name, url }, i) => (
               <div
                 key={`${activeCategory.category}-${name}-${i}`}
-                className="glass-card overflow-hidden hover-lift group animate-fade-up"
+                className="glass-card hover-lift group animate-fade-up overflow-hidden border shadow-sm transition-all duration-300"
                 style={{ animationDelay: `${i * 0.05}s` }}
               >
-                <div className="aspect-square overflow-hidden relative bg-muted/30">
+                <div className="relative aspect-square overflow-hidden bg-muted/30">
                   <img
                     src={url}
                     alt={name}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
                     loading="lazy"
                     onError={(e) => {
                       const target = e.currentTarget;
                       if (!target.src.endsWith("/placeholder.svg")) target.src = "/placeholder.svg";
                     }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-foreground/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-foreground/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                 </div>
                 <div className="p-4 sm:p-6">
                   <span className="inline-block max-w-full break-words rounded-full bg-primary/10 px-2.5 py-1 font-body text-[10px] font-semibold uppercase tracking-[0.12em] text-primary sm:px-3 sm:text-xs sm:tracking-[0.15em]">

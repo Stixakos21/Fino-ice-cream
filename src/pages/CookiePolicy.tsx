@@ -9,7 +9,7 @@ const CookiePolicy = () => {
 
   if (language === "el") {
     return (
-      <LegalPageLayout title="Πολιτική Cookies" lastUpdated="4 Αυγούστου 2026">
+      <LegalPageLayout title="Πολιτική Cookies" lastUpdated="12 Οκτώβρη 2026">
         <p>
           Η παρούσα Πολιτική Cookies εξηγεί πώς ο ιστότοπος{" "}
           <a href="https://finoicecream.gr">finoicecream.gr</a> χρησιμοποιεί cookies και παρόμοιες
@@ -74,6 +74,11 @@ const CookiePolicy = () => {
             <tr>
               <td>fino-site-language</td>
               <td>Απομνημόνευση γλώσσας ιστότοπου</td>
+              <td>12 μήνες</td>
+            </tr>
+            <tr>
+              <td>fino-site-theme</td>
+              <td>Απομνημόνευση χρωματικού θέματος ιστότοπου (light/dark)</td>
               <td>12 μήνες</td>
             </tr>
             <tr>
@@ -184,6 +189,11 @@ const CookiePolicy = () => {
           <tr>
             <td>fino-site-language</td>
             <td>Remember website language</td>
+            <td>12 months</td>
+          </tr>
+          <tr>
+            <td>fino-site-theme</td>
+            <td>Remember website color theme (light/dark)</td>
             <td>12 months</td>
           </tr>
           <tr>

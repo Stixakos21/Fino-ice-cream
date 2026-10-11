@@ -43,20 +43,20 @@ const Footer = () => {
         };
 
   return (
-    <footer className="bg-[hsl(40,35%,96%)] pb-[max(0px,env(safe-area-inset-bottom,0px))] text-stone-900">
+    <footer className="border-t border-border bg-background pb-[max(0px,env(safe-area-inset-bottom,0px))] text-foreground">
       <div className="container-wide mx-auto section-padding">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4">
           <div className="flex flex-col items-start gap-4">
             <img src={logo} alt="Fino IceCream" className="h-20 w-auto" loading="lazy" />
-            <p className="text-stone-700 text-sm font-body">
+            <p className="text-sm font-body text-muted-foreground">
               {t.tagline}
             </p>
-            <div className="flex items-center gap-4 mt-2">
+            <div className="mt-2 flex items-center gap-4">
               <a
                 href="https://www.instagram.com/finoicecreams"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-stone-700 hover:text-stone-900 transition-colors"
+                className="text-muted-foreground transition-colors hover:text-foreground"
                 aria-label="Instagram"
               >
                 <Instagram size={22} />
@@ -65,7 +65,7 @@ const Footer = () => {
                 href="https://www.facebook.com/share/1GSygRHH6z"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-stone-700 hover:text-stone-900 transition-colors"
+                className="text-muted-foreground transition-colors hover:text-foreground"
                 aria-label="Facebook"
               >
                 <Facebook size={22} />
@@ -74,7 +74,7 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="font-display text-lg mb-4">{t.menu}</h4>
+            <h4 className="mb-4 font-display text-lg">{t.menu}</h4>
             <ul className="space-y-2">
               {[
                 { to: "/", label: t.home },
@@ -86,7 +86,7 @@ const Footer = () => {
                 <li key={link.to}>
                   <Link
                     to={link.to}
-                    className="inline-flex min-h-[40px] items-center py-1 font-body text-sm text-stone-700 transition-colors hover:text-stone-900"
+                    className="inline-flex min-h-[40px] items-center py-1 font-body text-sm text-muted-foreground transition-colors hover:text-foreground"
                   >
                     {link.label}
                   </Link>
@@ -96,7 +96,7 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="font-display text-lg mb-4">{t.legal}</h4>
+            <h4 className="mb-4 font-display text-lg">{t.legal}</h4>
             <ul className="space-y-2">
               {[
                 { to: "/privacy", label: t.privacy },
@@ -106,7 +106,7 @@ const Footer = () => {
                 <li key={link.to}>
                   <Link
                     to={link.to}
-                    className="inline-flex min-h-[40px] items-center py-1 font-body text-sm text-stone-700 transition-colors hover:text-stone-900"
+                    className="inline-flex min-h-[40px] items-center py-1 font-body text-sm text-muted-foreground transition-colors hover:text-foreground"
                   >
                     {link.label}
                   </Link>
@@ -116,7 +116,7 @@ const Footer = () => {
                 <button
                   type="button"
                   onClick={openPreferences}
-                  className="inline-flex min-h-[40px] items-center py-1 font-body text-sm text-stone-700 transition-colors hover:text-stone-900"
+                  className="inline-flex min-h-[40px] items-center py-1 font-body text-sm text-muted-foreground transition-colors hover:text-foreground"
                 >
                   {t.cookieSettings}
                 </button>
@@ -125,26 +125,26 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="font-display text-lg mb-4">{t.contact}</h4>
-            <ul className="space-y-3 text-sm text-stone-700">
+            <h4 className="mb-4 font-display text-lg">{t.contact}</h4>
+            <ul className="space-y-3 text-sm text-muted-foreground">
               <li className="flex items-start gap-2">
                 <MapPin size={16} className="mt-0.5 shrink-0" />
                 <span>{t.addressTitle}</span>
               </li>
               <li className="flex items-center gap-2">
                 <Phone size={16} className="shrink-0" />
-                <a href="tel:2810380812" className="hover:text-stone-900 transition-colors">281 0380812</a>
+                <a href="tel:2810380812" className="transition-colors hover:text-foreground">281 0380812</a>
               </li>
               <li className="flex items-center gap-2">
                 <Mail size={16} className="shrink-0" />
-                <a href="mailto:pagotofino@gmail.com" className="hover:text-stone-900 transition-colors">pagotofino@gmail.com</a>
+                <a href="mailto:pagotofino@gmail.com" className="transition-colors hover:text-foreground">pagotofino@gmail.com</a>
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="border-t border-stone-300 mt-12 pt-8 text-center">
-          <p className="text-stone-700 text-sm font-body">{t.copyright}</p>
+        <div className="mt-12 border-t border-border pt-8 text-center">
+          <p className="text-sm font-body text-muted-foreground">{t.copyright}</p>
         </div>
       </div>
     </footer>

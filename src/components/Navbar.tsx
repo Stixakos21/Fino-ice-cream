@@ -1,8 +1,21 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, Moon, Sun, X } from "lucide-react";
 import logo from "@/assets/fino-logo-transparent.png";
 import { useLanguage } from "@/contexts/LanguageContext";
+
+const THEME_STORAGE_KEY = "fino-theme";
+
+const getInitialTheme = (): "light" | "dark" => {
+  if (typeof window === "undefined") return "light";
+
+  const savedTheme = window.localStorage.getItem(THEME_STORAGE_KEY);
+  if (savedTheme === "light" || savedTheme === "dark") {
+    return savedTheme;
+  }
+
+  return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+};
 
 const navLinks = [
   { to: "/", label: { el: "Αρχική", en: "Home" } },
@@ -15,9 +28,11 @@ const navLinks = [
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [theme, setTheme] = useState<"light" | "dark">(getInitialTheme);
   const location = useLocation();
   const { language, toggleLanguage } = useLanguage();
   const hideLogo = location.pathname === "/epikoinonia";
+  const isDarkMode = theme === "dark";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -28,6 +43,16 @@ const Navbar = () => {
   useEffect(() => {
     setMobileOpen(false);
   }, [location]);
+
+  useEffect(() => {
+    document.documentElement.classList.toggle("dark", isDarkMode);
+    document.documentElement.style.colorScheme = isDarkMode ? "dark" : "light";
+    window.localStorage.setItem(THEME_STORAGE_KEY, theme);
+  }, [isDarkMode, theme]);
+
+  const toggleTheme = () => {
+    setTheme((currentTheme) => (currentTheme === "light" ? "dark" : "light"));
+  };
 
   return (
     <header
@@ -61,14 +86,26 @@ const Navbar = () => {
           ))}
         </ul>
 
-        <button
-          type="button"
-          onClick={toggleLanguage}
-          className="hidden md:inline-flex min-h-[40px] items-center rounded-full border border-border bg-card px-3 py-1.5 font-body text-xs font-semibold tracking-wide text-foreground transition-colors hover:border-primary/40 hover:text-primary"
-          aria-label={language === "el" ? "Αλλαγή σε Αγγλικά" : "Switch to Greek"}
-        >
-          {language === "el" ? "EN" : "EL"}
-        </button>
+        <div className="hidden items-center gap-2 md:flex">
+          <button
+            type="button"
+            onClick={toggleTheme}
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border bg-card text-foreground transition-colors hover:border-primary/40 hover:text-primary"
+            aria-label={isDarkMode ? "Toggle light mode" : "Toggle dark mode"}
+            title={isDarkMode ? "Toggle light mode" : "Toggle dark mode"}
+          >
+            {isDarkMode ? <Sun size={17} /> : <Moon size={17} />}
+          </button>
+
+          <button
+            type="button"
+            onClick={toggleLanguage}
+            className="inline-flex min-h-[40px] items-center rounded-full border border-border bg-card px-3 py-1.5 font-body text-xs font-semibold tracking-wide text-foreground transition-colors hover:border-primary/40 hover:text-primary"
+            aria-label={language === "el" ? "Αλλαγή σε Αγγλικά" : "Switch to Greek"}
+          >
+            {language === "el" ? "EN" : "EL"}
+          </button>
+        </div>
 
         <button
           type="button"
@@ -83,7 +120,17 @@ const Navbar = () => {
 
       {mobileOpen && (
         <div className="max-h-[min(70vh,calc(100dvh-5rem))] overflow-y-auto border-t border-border bg-card/98 backdrop-blur-md animate-fade-in md:hidden">
-          <div className="flex justify-center px-4 pt-4">
+          <div className="flex items-center justify-center gap-3 px-4 pt-4">
+            <button
+              type="button"
+              onClick={toggleTheme}
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border bg-card text-foreground"
+              aria-label={isDarkMode ? "Toggle light mode" : "Toggle dark mode"}
+              title={isDarkMode ? "Toggle light mode" : "Toggle dark mode"}
+            >
+              {isDarkMode ? <Sun size={17} /> : <Moon size={17} />}
+            </button>
+
             <button
               type="button"
               onClick={toggleLanguage}

@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import Layout from "@/components/Layout";
 import { useLanguage } from "@/contexts/LanguageContext";
+import fino1970historyvideo from "@/assets/fino1970historyvideo.mp4";
 import fino2000historyvideo from "@/assets/fino2000historyvideo.mp4";
 import fino68YearsBadge from "@/assets/68_xronia_fino-removebg-preview.png";
 
@@ -132,22 +133,27 @@ const historyImageGridClass = (count: number) => {
 
 const History = () => {
   const { language } = useLanguage();
-  const videoRefs = useRef<HTMLVideoElement[]>([]);
+  const videoRefs = useRef<Array<HTMLVideoElement | null>>([]);
   const timelineBase = timelineByLanguage[language];
   const photoSectionCount = Math.max(timelineBase.length - 1, 0);
   const photoChunkSizes = buildPhotoChunkSizes(historyPhotos.length, photoSectionCount);
   const timeline = (() => {
     let cursor = 0;
+    let photoIndex = 0;
 
     return timelineBase.map((item, i) => {
       let media: TimelineMediaItem[] = [];
 
-      if (i === timelineBase.length - 1) {
+      if (item.year === "1970") {
+        media = [{ type: "video", src: fino1970historyvideo }];
+      } else if (i === timelineBase.length - 1) {
         media = [{ type: "video", src: fino2000historyvideo }];
       } else {
-        const chunkSize = photoChunkSizes[i] ?? 0;
-        media = historyPhotos.slice(cursor, cursor + chunkSize).map((src) => ({ type: "image", src }));
+        const chunkSize = photoChunkSizes[photoIndex] ?? 0;
+        const slice = historyPhotos.slice(cursor, cursor + chunkSize);
+        media = slice.map((src) => ({ type: "image", src }));
         cursor += chunkSize;
+        photoIndex += 1;
       }
 
       return { ...item, media };
@@ -274,12 +280,12 @@ const History = () => {
                                   mediaItem.type === "video" ? "sm:col-span-2" : ""
                                 }`}
                               >
-                                <div className="relative aspect-[5/4] sm:aspect-[3/2] lg:aspect-[16/10] w-full">
+                                <div className={`relative w-full ${mediaItem.type === "image" ? "bg-gradient-to-br from-cream via-background to-ice-blue/40 p-2 sm:p-3" : "aspect-[5/4] sm:aspect-[3/2] lg:aspect-[16/10]"}`}>
                                   {mediaItem.type === "image" ? (
                                     <img
                                       src={mediaItem.src || "/placeholder.svg"}
                                       alt={`${item.title} - ${t.photoLabel} ${j + 1}`}
-                                      className="absolute inset-0 h-full w-full object-cover object-center transition-[transform,filter] duration-700 ease-out group-hover:scale-[1.03] group-hover:brightness-[1.03] [image-orientation:from-image]"
+                                      className="block h-auto w-full max-h-[38rem] object-contain [image-orientation:from-image]"
                                       loading="lazy"
                                       decoding="async"
                                     />
