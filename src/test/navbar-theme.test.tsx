@@ -1,10 +1,28 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
-import { describe, expect, it } from "vitest";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import Navbar from "@/components/Navbar";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 
 describe("Navbar theme toggle", () => {
+  beforeEach(() => {
+    window.localStorage.clear();
+    vi.spyOn(window, "matchMedia").mockReturnValue({
+      matches: true,
+      media: "(prefers-color-scheme: dark)",
+      onchange: null,
+      addListener: vi.fn(),
+      removeListener: vi.fn(),
+      addEventListener: vi.fn(),
+      removeEventListener: vi.fn(),
+      dispatchEvent: vi.fn(),
+    });
+  });
+
+  afterEach(() => {
+    vi.restoreAllMocks();
+  });
+
   it("toggles the dark mode class on the document root", () => {
     render(
       <LanguageProvider>
